@@ -7,24 +7,23 @@
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed grid">
     <div class="column">
-      
-      <form class="ui form">
+      <%= form_for(:session, html: { class: 'ui form' }, url: login_path) do |f| %>
         <div class="field">
-          <label>Email</label>
+          <%= f.label :email %>
           <div class="ui left icon input">
-            <input type="text" name="email" placeholder="Email">
+            <%= f.text_field :email, placeholder: 'Email' %>
             <i class="envelope icon"></i>
           </div>
         </div>
         <div class="field">
-          <label>Password</label>
+          <%= f.label :password %>
           <div class="ui left icon input">
-            <input type="password" name="password" placeholder="Password">
+            <%= f.password_field :password, placeholder: 'Password' %>
             <i class="lock icon"></i>
           </div>
         </div>
-        <button class="ui button" type="submit">Submit</button>
-      </form>
+        <%= f.button :login, class: 'ui button' %>
+      <% end %>
     </div>
     <div class="column middle aligned">
       <div class="ui big button blue">
