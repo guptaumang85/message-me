@@ -7,22 +7,19 @@
 	<div class="twelve wide column">
 		<div class="ui card fluid raised chatbox">
 			<div class="content">
-				<div class="ui feed">
+				<div class="ui feed" id='message-container'>
 					<%= render @messages %>
 				</div>
 			</div>
 			<div class="extra content">
-
-
-				<form class="ui reply form">
+				<%= form_for(:message, html: { class: 'ui reply form' }, url: messages_path, remote: true) do |f| %>
 			    <div class="field">
 			      <div class="ui fluid input icon">
-			      	<input type="text" placeholder="Enter a message...">
-			      	<i class="ui blue paper plane icon"></i>
+			      	<%= f.text_field :body, placeholder: 'Enter a message...' %>
+			      	<%= f.button '<i class="ui blue paper plane icon"></i>'.html_safe %>
 			    	</div>
 			    </div>
-			    
-			  </form>
+			  <% end %>
 			</div>
 		</div>
 	</div>
