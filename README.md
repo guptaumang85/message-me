@@ -1,12 +1,13 @@
 # README
 
-Rails application using action cable for the chatroom.
+Rails application using action cable for [MessageMe](http://fierce-castle-45943.herokuapp.com/)
 
 Technologies used:
 
  - Rails 5
- - ActionCable
+ - ActionCable, Web-Socket
  - Semantic UI
+ - Postgresql, sqlite
  - Jquery
  - CSS
  - HTML
